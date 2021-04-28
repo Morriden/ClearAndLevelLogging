@@ -1,0 +1,26 @@
+[
+    {
+        "img": "../assets/images/image2.jpg",
+        "alt": "Logging Service 1",
+        "title": "Pole hauling",
+        "button": "Contact Us"
+    },
+    {
+        "img": "../assets/images/image1.jpg",
+        "alt": "Logging Service 2",
+        "title": "Self Loader",
+        "button": "Contact Us"
+    },
+    {
+        "img": "../assets/images/image2.jpg",
+        "alt": "Logging Service 3",
+        "title": "Steerable trailers & Steet cars",
+        "button": "Contact Us"
+    },
+    {
+        "img": "../assets/images/image1.jpg",
+        "alt": "Logging Service 4",
+        "title": "Lowbed and Flatbed",
+        "button": "Contact Us"
+    }
+]
