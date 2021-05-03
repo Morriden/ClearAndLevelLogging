@@ -8,8 +8,10 @@ import { Button } from "./Button"
 const HeaderTransparent = () => {
   return (
     <Nav >
-      <Bars />
-      <NavLink to="/">Clear and Level Logging</NavLink>
+      <PhoneMenu>
+        <Bars />
+        <NavLink to="/">Clear and Level Logging</NavLink>
+      </PhoneMenu>
       <NavMenu>
         {menuData.map((item, index) => (
           <NavLink href={item.link} key={index}>
@@ -34,7 +36,7 @@ const Nav = styled.nav`
   padding: 0.5rem calc((100vw - 1500px) / 2);
   z-index: 100;
   position: relative;
-  margin-right: 90px;
+  /* margin-right: 90px; */
 `
 
 const NavLink = styled(Link)`
@@ -52,8 +54,10 @@ border: red solid 3px;
 `
 
 const Bars = styled(FaBars)`
+  /* position: absolute; */
   display: none;
   color: #fff;
+
 
   @media screen and (max-width: 768px) {
     display: block;
@@ -63,8 +67,22 @@ const Bars = styled(FaBars)`
     transform: translate(-100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
+    /* border: purple solid 3px; */
   }
 `
+
+const PhoneMenu = styled.div`
+  @media screen and (max-width: 768px) {
+    /* display: absolute; */
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border: solid 3px purple;
+  }
+`
+
 const NavMenu = styled.div`
   display: flex;
   align-items: center;
