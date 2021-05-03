@@ -9,7 +9,7 @@ const HeaderTransparent = () => {
   return (
     <Nav >
       <Bars />
-      <NavLink to="/">Clear and Level Logging Inc.</NavLink>
+      <NavLink to="/">Clear and Level Logging</NavLink>
       <NavMenu>
         {menuData.map((item, index) => (
           <NavLink href={item.link} key={index}>
@@ -47,6 +47,8 @@ height: 100%;
 cursor: pointer;
 font-weight: bold;
 font-size: 25px;
+/* width: 300px; */
+border: red solid 3px;
 `
 
 const Bars = styled(FaBars)`
