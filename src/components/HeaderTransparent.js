@@ -1,18 +1,22 @@
-import * as React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import styled from 'styled-components'
-import {FaBars} from 'react-icons/fa'
+import { FaBars, FaTimes } from 'react-icons/fa'
 import { menuData } from '../data/MenuData'
 import { Button } from "./Button"
 
 const HeaderTransparent = () => {
+  const [click, setClick] = useState(false)
+
+  const handleClick = () => setClick(!click)
+
   return (
     <Nav >
-      <PhoneMenu>
-        <Bars />
+        <MobileIcon onClick={handleClick}>
+          {click ? <FaTimes /> : <FaBars />}
+        </MobileIcon>
         <NavLink to="/">Clear and Level Logging</NavLink>
-      </PhoneMenu>
-      <NavMenu>
+      <NavMenu onClick={handleClick} click={click}>
         {menuData.map((item, index) => (
           <NavLink href={item.link} key={index}>
             {item.title}
@@ -29,14 +33,13 @@ const HeaderTransparent = () => {
 export default HeaderTransparent
 
 const Nav = styled.nav`
-  background: 'transparent'; //WE FOUND IT JESUS
+  background: 'transparent';
   height: 80px;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1500px) / 2);
   z-index: 100;
   position: relative;
-  /* margin-right: 90px; */
 `
 
 const NavLink = styled(Link)`
@@ -49,54 +52,63 @@ height: 100%;
 cursor: pointer;
 font-weight: bold;
 font-size: 25px;
-/* width: 300px; */
-border: red solid 3px;
+/* line-height: 1; */
+
+@media screen and (max-width: 960px) {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  display: table;
+
+  &:hover {
+    color: #ff4040;
+    transition: all 0.3s ease;
+  }
+}
 `
 
-const Bars = styled(FaBars)`
-  /* position: absolute; */
+const MobileIcon = styled.div`
   display: none;
   color: #fff;
 
-
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 960px) {
     display: block;
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-100%, 75%);
+    transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
-    /* border: purple solid 3px; */
   }
 `
 
-const PhoneMenu = styled.div`
-  @media screen and (max-width: 768px) {
-    /* display: absolute; */
-    display: flex;
-    width: 100%;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    border: solid 3px purple;
-  }
-`
-
-const NavMenu = styled.div`
+const NavMenu = styled.ul`
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 768px) {
-    display: none;
+  @media screen and (max-width: 960px) {
+    display: grid;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end:2;
+    flex-direction: column;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: ${({ click }) => (click ? "100%" : "-1000px") };
+      opacity: 1;
+      transition: all 0.2s ease;
+      background-color: black;
   }
+  
 `
 
 const NavButton = styled.div`
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 960px) {
     display: none;
   }
 `
