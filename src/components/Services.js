@@ -83,7 +83,7 @@ const ServicesHeading = styled.div`
 const ServicesWrapper = styled.div`
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 2fr);
     grid-gap: 10px;
     justify-items: center;
     padding: 0 2rem;
@@ -98,6 +98,7 @@ const ServicesWrapper = styled.div`
 `
 
 const ServicesCard = styled.div`
+object-fit: contain;
     line-height: 2;
     width: 100%;
     height: 500px;
@@ -107,6 +108,7 @@ const ServicesCard = styled.div`
 `
 
 const ServicesImg = styled(Img)`
+    
     height: 100%;
     max-width: 100%;
     position: relative;

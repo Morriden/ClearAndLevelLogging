@@ -1,24 +1,24 @@
 [
     {
-        "img": "../assets/images/image2.jpg",
-        "alt": "Logging Service 1",
-        "title": "Pole hauling",
+        "img": "../assets/images/polehauling.jpg",
+        "alt": "Pole Hauling",
+        "title": "Pole Hauling",
         "button": "Contact Us"
     },
     {
-        "img": "../assets/images/image1.jpg",
-        "alt": "Logging Service 2",
-        "title": "Self Loader",
+        "img": "../assets/images/selfloader1.jpg",
+        "alt": "Self Loading",
+        "title": "Self Loading",
         "button": "Contact Us"
     },
     {
-        "img": "../assets/images/image2.jpg",
-        "alt": "Logging Service 3",
-        "title": "Steerable trailers & Steet cars",
+        "img": "../assets/images/steercars.jpg",
+        "alt": "Steerable trailers & cars",
+        "title": "Steerable trailers & Steer cars",
         "button": "Contact Us"
     },
     {
-        "img": "../assets/images/image1.jpg",
+        "img": "../assets/images/holderimage.jpg",
         "alt": "Logging Service 4",
         "title": "Lowbed and Flatbed",
         "button": "Contact Us"
