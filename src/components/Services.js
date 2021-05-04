@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import {useStaticQuery, graphql} from 'gatsby'
-import Img from 'gatsby-image'
 import {Button} from './Button'
 
 const services = ({ heading }) => {
@@ -31,10 +30,7 @@ const services = ({ heading }) => {
         const servicesArray = []
         data.allServicesJson.edges.forEach((item, index) => {
             servicesArray.push(
-                <ServicesCard key={index}>
-                    <ServicesImg src={item.node.img.childImageSharp.fluid.src} 
-                    fluid={item.node.img.childImageSharp.fluid}
-                    />
+                <ServicesCard key={index} item={item}>
                     <ServicesInfo>
                         <TextWrap>
                           <ServicesTitle>{item.node.title}</ServicesTitle>  
@@ -43,8 +39,8 @@ const services = ({ heading }) => {
                             primary="true" 
                             round="true" 
                             css={`
-                                position: absolute;
-                                top: 420px;
+                                border: solid 3px black;
+                                background-color: silver;
                                 font-size: 14px;
                             `}>
                             {item.node.button}
@@ -70,21 +66,22 @@ const ServicesContainer = styled.div`
     min-height: 100vh;
     min-width: 100%;
     padding: 5rem calc((100vw - 1800px) / 2);
-    background-color: #C0C0C0;
+    background-color: #acacac;
 `
 
 const ServicesHeading = styled.div`
     font-size: clamp(1.2rem, 5vw, 3rem);
     text-align: center;
+    text-decoration: underline;
     margin-bottom: 5rem;
-    color: #000;
+    color: #100c08;
 `
 
 const ServicesWrapper = styled.div`
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 2fr);
-    grid-gap: 10px;
+    grid-gap: 20px;
     justify-items: center;
     padding: 0 2rem;
 
@@ -98,22 +95,18 @@ const ServicesWrapper = styled.div`
 `
 
 const ServicesCard = styled.div`
-object-fit: contain;
     line-height: 2;
     width: 100%;
-    height: 500px;
+    height: 375px;
     position: relative;
     border-radius: 10px;
     transition: 0.2s ease;
-`
-
-const ServicesImg = styled(Img)`
-    
-    height: 100%;
-    max-width: 100%;
-    position: relative;
+    background-image: url(${props => props.item.node.img.childImageSharp.fluid.src});
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    filter: brightness(85%);
     border-radius: 10px;
-    filter: brightness(70%);
     transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 
     &:hover {
@@ -124,8 +117,10 @@ const ServicesImg = styled(Img)`
 const ServicesInfo = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 0 2rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    height: 100%;
 
     @media screen and (max-width: 280px) {
         padding: 0 1rem;
@@ -135,14 +130,14 @@ const ServicesInfo = styled.div`
 const TextWrap = styled.div`
     display: flex;
     align-items: center;
-    position: absolute;
-    top: 375px;
 `
-
 const ServicesTitle = styled.div`
     font-weight: 400;
     font-size: 1rem;
-    margin-left: 0.5rem;
-    color: #fff;
+    width: 100%;
+    padding: 3px;
+    background-color: silver;
+    border: solid black 3px;
+    border-radius: 10px;
+    color: black;
 `
-
