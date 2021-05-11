@@ -24,7 +24,7 @@ const HeaderNotTransparent = () => {
         ))}
       </NavMenu>
       <NavButton>
-        <Button primary="true" round="true" href="#contactusPage">Contact Us</Button>
+        <Button primary="true" round="true" href="/#contactusPage">Contact Us</Button>
       </NavButton>
     </Nav>
   )

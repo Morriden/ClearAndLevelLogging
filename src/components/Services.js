@@ -65,7 +65,8 @@ export default services
 const ServicesContainer = styled.div`
     min-height: 100vh;
     min-width: 100%;
-    padding: 5rem calc((100vw - 1800px) / 2);
+    /* padding: 5rem calc((100vw - 1800px) / 2); */
+    padding: 1.5rem;
     background-color: #acacac;
 `
 
