@@ -26,13 +26,16 @@ const Email = () => {
                     </FormWrapEmailInfo>
                 
                 <Button as="button" type="submit" primary="true" round="true" css={`
-                height: 48px; 
+                height: 48px;
+                margin: auto;
                 @media screen and (max-width: 768px) {
-                    width: 100%;
-                    min-width: 350px;
+                    margin: auto;
+                    width: 20%
+                    min-width: 250px; 
                 }
                 @media screen and (max-width: 400px) {
-                    width: 100%;
+                    margin: auto;
+                    width: 20%;
                     min-width: 250px;
                 }
                 `}>
@@ -59,13 +62,16 @@ const Email = () => {
                     </FormWrapEmailInfo>
                 
                 <Button as="button" type="submit" primary="true" round="true" css={`
-                height: 48px; 
+                height: 48px;
+                margin: auto;
                 @media screen and (max-width: 768px) {
-                    width: 100%;
-                    min-width: 350px;
+                    margin: auto;
+                    width: 20%
+                    min-width: 250px; 
                 }
                 @media screen and (max-width: 400px) {
-                    width: 100%;
+                    margin: auto;
+                    width: 20%;
                     min-width: 250px;
                 }
                 `}>
@@ -127,6 +133,9 @@ const EmailContent = styled.div`
 
     form {
         z-index: 10;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 
     @media screen and (max-width: 768px) {
