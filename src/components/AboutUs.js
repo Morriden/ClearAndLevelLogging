@@ -24,12 +24,11 @@ export default AboutUs
 
 const AboutUsContainer = styled.div`
     background: #C0C0C0;
-    border: solid 3px blue;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    padding: 0 5rem;
+    height: 91vh;
+    padding: 3rem 5rem;
     position: relative;
     margin: auto;
     color: #fff;
@@ -64,7 +63,8 @@ img {
     width: 250px;
     margin: auto;
     float: left;
-    border: solid green 2px;
+    border: solid white 5px;
+    border-radius: 10px;
 }
 p {
     text-indent: 50px;
@@ -77,5 +77,4 @@ p {
     line-height: 1.1;
     font-weight: bold;
     font-size: 1.4em;
-    border: solid 2px black;
 `
