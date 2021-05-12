@@ -27,7 +27,7 @@ const AboutUsContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 91vh;
+    height: 100%;
     padding: 3rem 5rem;
     position: relative;
     margin: auto;
