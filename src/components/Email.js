@@ -25,24 +25,27 @@ const Email = () => {
                     </p>
                 </div4>
             </ContactInformation>
-        <form action="#">
+        <form 
+            action="https://formspree.io/f/mjvjwajq"
+            method="POST"
+        >
         <h1>Contact Dave (What should go here?)</h1>
                 <FormWrapContactInfo>
                     <label htmlFor="fullname"></label>
-                        <input type="text" placeholder="Full Name"id="fullname" />
+                        <input type="text" placeholder="Full Name" id="fullname" name="name" />
                     <label htmlFor="phonenumber"></label>
-                        <input type="number" placeholder="Phone Number" id="phonenumber" />
+                        <input type="number" placeholder="Phone Number" id="phonenumber" name="phonenumber" />
                 </FormWrapContactInfo>
                 <FormWrapEmailInfo>
                     <label htmlFor="email"></label>
-                        <input type="email" placeholder="Email Address" id="email" />
+                        <input type="email" placeholder="Email Address" id="email" name="_replyto" />
                     <label htmlFor="subject"></label>
-                        <input type="text" placeholder="Subject" id="subject" />
+                        <input type="text" placeholder="Subject" id="subject" name="emailsubject"/>
                     <label htmlFor="message"></label>
-                        <textarea type="text" id="message" placeholder="Message" className="message"/>
+                        <textarea type="text" id="message" placeholder="Message" name="message" className="messagecss"/>
                 </FormWrapEmailInfo>
                 
-                <Button as="button" type="submit" primary="true" round="true" css={`
+                <Button type="submit" as="button" type="submit" primary="true" round="true" css={`
                     height: 48px;
                     margin: auto;
                     @media screen and (max-width: 768px) {
@@ -142,7 +145,7 @@ padding: 10px;
         margin: 2px;
     }
 
-    .message {
+    .messagecss {
         height: 200px;
         border: 2px solid black;
     }
@@ -177,7 +180,7 @@ padding: 10px;
         margin: 3px;
     }
 
-    .message {
+    .messagecss {
         height: 200px;
         padding-left: 0.4em;
         border: 2px solid black;
