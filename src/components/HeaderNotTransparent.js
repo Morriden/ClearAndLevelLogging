@@ -34,7 +34,7 @@ export default HeaderNotTransparent
 
 const Nav = styled.nav`
   background: rgb(38, 38, 38);
-  height: 80px;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1500px) / 2);
@@ -52,10 +52,11 @@ height: 100%;
 cursor: pointer;
 font-weight: bold;
 font-size: 25px;
+/* border: solid green 3px; */
 
 @media screen and (max-width: 960px) {
   text-align: center;
-  padding: 2rem;
+  padding: 2.5rem;
   width: 100%;
   display: table;
 
